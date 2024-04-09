@@ -35,4 +35,4 @@ Ensure you have the following installed:
 1. **Clone the Repository**
    ```sh
    git clone https://github.com/UnwiseGiraffeX86/SkyGrid-Test.git
-   cd SkyGrid-Test muie
+   cd SkyGrid-Test
