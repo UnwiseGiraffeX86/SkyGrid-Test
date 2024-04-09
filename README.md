@@ -34,5 +34,5 @@ Ensure you have the following installed:
 
 1. **Clone the Repository**
    ```sh
-   git clone https://yourprojectrepository.git
-   cd Smart-Urban-Weather-Adaptation-System
+   git clone https://github.com/UnwiseGiraffeX86/SkyGrid-Test.git
+   cd SkyGrid-Test
