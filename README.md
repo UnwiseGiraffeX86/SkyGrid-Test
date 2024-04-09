@@ -23,6 +23,46 @@ SkyGrid is a cutting-edge platform designed to enhance urban planning and manage
 
 ## Getting Started
 
+### Repository Structure
+
+This section outlines the structure of the repository to help you navigate and understand the organization of the codebase.
+```sh
+    SkyGrid-Test/
+    │
+    ├── backend/ # Backend server application
+    │ ├── app.py # Main application file
+    │ ├── requirements.txt # Python dependencies
+    │ ├── models/ # AI models and database models
+    │ ├── routes/ # API routes
+    │ ├── services/ # Business logic
+    │ └── utils/ # Utility functions and classes
+    │
+    ├── blockchain/ # Blockchain smart contracts and setup
+    │ ├── contracts/ # Solidity contracts
+    │ ├── migrations/ # Deployment scripts
+    │ ├── test/ # Contract tests
+    │ └── truffle-config.js # Truffle framework configuration
+    │
+    ├── frontend/ # Frontend web application
+    │ ├── public/ # Public assets like index.html, favicon
+    │ ├── src/ # React app source files
+    │ │ ├── components/ # Reusable UI components
+    │ │ ├── pages/ # Application pages
+    │ │ ├── App.css # Global styles
+    │ │ ├── App.js # Main React component
+    │ │ └── index.js # Entry point
+    │ └── package.json # Node.js dependencies
+    │
+    ├── data/ # Directory for storing data processing scripts and datasets
+    │ └── scripts/ # Scripts for data extraction and processing
+    │
+    ├── docs/ # Documentation files and resources
+    │ └── architecture.md # Architectural overview and diagrams
+    │
+    ├── .gitignore # Specifies intentionally untracked files to ignore
+    ├── LICENSE # License information
+    └── README.md # Project overview and setup instructions
+```
 ### Prerequisites
 
 Ensure you have the following installed:
