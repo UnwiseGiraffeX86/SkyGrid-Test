@@ -1,46 +1,41 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard Card Layout</title>
 <link rel="stylesheet" href="dashboard.css">
+<title>Dashboard Layout</title>
 </head>
 <body>
 
-<div class="dashboard">
-  <!-- Card 1 -->
-  <div class="card">
-    <div class="card-header">
-      <h2>Total lights</h2>
-      <span>Icon</span>
+  <div class="container">
+    <div class="settingBar">
+      <!-- Settings content goes here -->
     </div>
-    <div class="card-content">
-      <p>1128 Functioning</p>
-      <p>142 Not functioning</p>
-    </div>
-    <div class="card-footer">
-      <a href="#">Read more</a>
-    </div>
-  </div>
-
-  <!-- Card 2 -->
-  <div class="card">
-    <div class="card-header">
-      <h2>Energy consumption</h2>
-      <span>Icon</span>
-    </div>
-    <div class="card-content">
-      <!-- Content for energy consumption -->
-    </div>
-    <div class="card-footer">
-      <a href="#">Read more</a>
+    <div class="cardContainer">
+      <!-- Top row of medium cards -->
+      <div class="card medium">Medium Card Content</div>
+      <div class="card medium">Medium Card Content</div>
+      <div class="card medium">Medium Card Content</div>
+      
+      
+      <!-- Second row with one medium card at the start and a large card at the end -->
+      <div class="card medium">Medium Card Content</div>
+      <!-- This extra large card will start here and span 2 columns and 2 rows -->
+      <div class="card extralarge">Extra Large Card Content</div>
+      
+      <!-- Third row with one medium card at the start and two small cards at the end -->
+      
+      <div class="card large">Large Card Content</div>
+      <!-- The MHolder now has its own grid system -->
+    <div class="MHolder">
+      <div class="card small">Small Card Content</div>
+      <div class="card small">Small Card Content</div>
     </div>
   </div>
-
-  <!-- More cards -->
-</div>
-
-</body>
-</html>
+     
+    </div>
+  </div>
+  
+  </body>
+  </html>

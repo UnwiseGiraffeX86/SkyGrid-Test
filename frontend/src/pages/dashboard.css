@@ -1,38 +1,78 @@
-
-body {
-  font-family: 'Arial', sans-serif;
+/* dashboard.css */
+body, html {
+  height: 100%;
   margin: 0;
-  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f1f1f1;
+}
+
+.container {
+  display: flex;
+  height: 100vh; /* Full height of the viewport */
+}
+
+.settingBar {
+  width: 250px; /* Fixed width for the setting bar */
+  background-color: #ff4d4d; /* Example color */
+  padding: 20px; /* Spacing inside the setting bar */
+}
+
+.cardContainer {
+  flex-grow: 1; /* Takes up the remaining width */
+  padding: 20px; /* Spacing inside the card container */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Creates a 3 column layout */
+  grid-template-rows: auto; /* Row height will be determined by the content */
+  grid-gap: 20px; /* Space between cards */
+}
+
+/* Add basic styling for the cards. */
+.card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: #f4f4f4;
-}
-.dashboard {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  width: 80%;
+  grid-template-columns: repeat(3, 1fr); /* Creates a 3 column layout */
+  grid-template-rows: repeat(4, auto); /* Creates a 4 row layout to accommodate all cards */
+  grid-gap: 20px; /* Space between cards */
 }
-.card {
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+
+
+.card.medium {
+  grid-row: span 1; /* Medium card will span 1 row */
 }
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
+
+.card.large {
+  grid-column: span 1;
+  grid-row: span 2; /* Large card will span 2 rows */
 }
-.card-header h2 {
-  margin: 0;
+
+.card.extralarge {
+  grid-column: span 1; /* Extra large card will span 2 columns */
+  grid-row: span 2; /* Extra large card will also span 2 rows */
 }
-.card-content {
-  margin-bottom: 20px;
+
+/* New style for MHolder to make it a grid container for the small cards */
+.MHolder {
+  display: grid;
+  grid-template-columns: auto; /* Single column layout */
+  grid-template-rows: 1fr 1fr; /* Two rows to accommodate both small cards */
+  background-color: #00000000;
+  align-content: start;
+  padding: 0;
+  grid-gap: 20px;
+  /* No padding on sides, top, or bottom for the small cards, but maintaining the 20px gap */
 }
-.card-footer {
-  text-align: right;
+
+/* Ensure the small cards fill the .MHolder space */
+.card.small {
+  /* Small card will take up the full space available in the cell, minus the padding defined on the card itself */
+  width: calc(100% - 40px); /* 100% of the cell width minus the left and right padding */
+  height: calc(50%-40px-10px  ); /* 50% of the cell height minus the top and bottom padding and half of the vertical gap */
 }
