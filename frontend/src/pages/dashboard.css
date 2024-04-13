@@ -48,6 +48,10 @@ body, html {
 .card.large {
   grid-column: span 1;
   grid-row: span 2; /* Large card will span 2 rows */
+  position: relative; /* Position relative for absolute positioning inside */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card.extralarge {
@@ -166,7 +170,35 @@ body, html {
   box-shadow:0px 0px 20px 10px #bdd926;
 }
 
-/*=== Map ===*/
+/*=== Enviroment ===*/
+.environmental-data {
+  padding: 10px;
+}
+
+.environmental-data h2 {
+  font-size: 1.5em;
+  color: #436850; /* Adjust color as needed */
+  margin-bottom: 10px;
+}
+
+.data-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.data-label {
+  font-weight: bold;
+  color: #436850; /* Adjust color as needed */
+}
+
+.data-value {
+  font-size: 1em;
+  color: #436850; /* Adjust color as needed */
+  margin-left: 5px;
+}
+
 
 body {
   padding-left: 170px; /* Adjust this value based on the width of the settingBar */
