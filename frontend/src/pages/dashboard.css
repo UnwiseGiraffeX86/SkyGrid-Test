@@ -191,6 +191,7 @@ body, html {
 }
 #title {
   grid-area: title;
+  color: #436850;
 }
 #temperature {
   grid-area: temp;
@@ -243,6 +244,17 @@ body, html {
   align-self: center; /* Center the title within the card */
 }
 
+.data-card .fa-solid {
+  margin-right: 4px;
+}
+
+.data-card .data-label,
+.data-card .data-value {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px; /* Adjust spacing as needed */
+}
+
 .data-card {
   display: flex;
   flex-direction: column;
@@ -276,6 +288,89 @@ body, html {
   overflow: auto; /* Allow scroll only if needed */
 }
 
+/*===Traffic Alert ===*/
+
+#traffic-alerts ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Styles for traffic alert list items */
+.traffic-alert {
+  background-color: #f2dede; /* default alert background */
+  color: #000000; /* default alert text color */
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+/* Severity-based background colors for traffic alerts */
+.traffic-alert-high {
+  background-color: #d9534f; /* red */
+}
+
+.traffic-alert-medium {
+  background-color: #f0ad4e; /* orange */
+}
+
+.traffic-alert-low {
+  background-color: #5bc0de; /* blue */
+}
+
+/* Traffic alert card styles */
+#traffic-alerts {
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Allow absolute positioning inside */
+  overflow-y: auto; /* Make only the list scrollable */
+  max-height: 300px; /* Set a fixed height to enable scrolling */
+  padding-top: 40px; /* This gives enough space at the top for the title */
+}
+
+/* Title styles for the traffic alert card */
+#traffic-alerts h2 {
+  position: absolute; /* Absolute position */
+  top: 0; /* Stick to the top */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust the positioning to the exact center */
+  width: 100%; /* Full width */
+  text-align: center; /* Align the text to the center */
+  margin-top: 10px; /* Add top margin for spacing */
+  z-index: 10; /* Make sure it sits above other content */
+}
+
+#traffic-alert-list {
+  list-style: none; /* Remove default list style */
+  padding: 0;
+  margin: 0; /* Remove default margin */
+  overflow-y: auto; /* Enable vertical scrolling */
+  height: 100%; /* Full height to enable scrolling within the card */
+}
+
+#traffic-alert-list li {
+  background-color: #f2dede; /* Light red background for alert */
+  margin: 10px 0; /* Spacing between alerts */
+  padding: 10px;
+  border-radius: 5px;
+  border-left: 5px solid #d9534f; /* Left border color indicating the severity */
+}
+
+#traffic-alert-list li.high-severity {
+  border-left-color: #d9534f; /* Red for high severity */
+  background-color: #f2dede; /* Light red background */
+}
+
+#traffic-alert-list li.medium-severity {
+  border-left-color: #f0ad4e; /* Orange for medium severity */
+  background-color: #fcf8e3; /* Light yellow background */
+}
+
+#traffic-alert-list li.low-severity {
+  border-left-color: #5bc0de; /* Blue for low severity */
+  background-color: #d9edf7; /* Light blue background */
+}
 
 
 /*=== Weather Alerts ===*/
@@ -284,6 +379,9 @@ body, html {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+.H2{
+  color: #436850;
 }
 
 /* Add styles for alert list items */

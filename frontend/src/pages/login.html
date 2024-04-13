@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Sign Up / Forgot Password</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+<div class="container">
+    <form class="form" id="loginForm">
+        <h2>Login</h2>
+        <div class="inputForm">
+            <input type="text" class="input" placeholder="Enter your Email">
+        </div>
+        <div class="inputForm">
+            <input type="password" class="input" placeholder="Enter your Password">
+        </div>
+        <div class="flex-row">
+            <div>
+                <input type="checkbox">
+                <label>Remember me</label>
+            </div>
+            <span class="span" onclick="toggleForgotPassword()">Forgot password?</span>
+        </div>
+        <button type="button" class="button-submit">Sign In</button>
+        <button class="btn google">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512" width="20" height="20">
+                <path fill="#4285F4" d="M488 261.8c0-18.3-1.6-36.1-4.6-53.2H250v100.1h134.2c-5.8 31.5-23 58.3-48.9 76.1l.3.2 71 54.7.5.5c20.9-19.4 39-43.5 51-71.2 11.9-27.5 18.4-56.9 18.4-88.1z"/>
+                <path fill="#34A853" d="M250 500c66.2 0 121.9-22 162.7-59.1l-75.1-58c-21.9 14.7-49.6 23.3-87.6 23.3-67.2 0-124.3-45.3-144.8-106.4l-.3-.6-76.1 58.7-.9.7c41.1 76.8 119.7 130 221.1 130z"/>
+                <path fill="#FBBC05" d="M105.2 297.6c-4.2-12.4-6.5-25.7-6.5-39.6s2.3-27.2 6.5-39.6v-.6l-76.5-58.8-.6-.3c-15.5 29.3-24.1 63.1-24.1 98.7s8.6 69.4 24.1 98.7l77.1-59z"/>
+                <path fill="#EA4335" d="M250 104.4c36.3 0 68.7 12.6 94.3 33.8l70.7-68.7C371 30.2 316.7 0 250 0 149.7 0 71 53.2 29.9 130l77.3 59c20.5-61.1 77.6-106.4 144.8-106.4z"/>
+            </svg>
+            Connect with Google
+        </button>
+        <p class="p">Don't have an account? <span class="span" onclick="toggleForms()">Sign Up</span></p>
+    </form>
+
+    <form class="form" id="signUpForm" style="display: none;">
+        <h2>Sign Up</h2>
+        <div class="inputForm">
+            <input type="text" class="input" placeholder="Enter your Name">
+        </div>
+        <div class="inputForm">
+            <input type="email" class="input" placeholder="Enter your Email">
+        </div>
+        <div class="inputForm">
+            <input type="password" class="input" placeholder="Create a Password">
+        </div>
+        <button type="button" class="button-submit">Register</button>
+        <p class="p">Already have an account? <span class="span" onclick="showLogin()">Login</span></p>
+    </form>
+
+    <!-- Forgot Password Form -->
+    <form class="form" id="forgotPasswordForm" style="display: none;">
+        <h2>Forgot Password</h2>
+        <div class="inputForm">
+            <input type="email" class="input" placeholder="Enter your Email to reset password">
+        </div>
+        <button type="button" class="button-submit">Send Reset Link</button>
+        <p class="p">Remember your password? <span class="span" onclick="showLogin()">Login</span></p>
+    </form>
+</div>
+
+<script>
+    function showLogin() {
+        var loginForm = document.getElementById('loginForm');
+        var signUpForm = document.getElementById('signUpForm');
+        var forgotPasswordForm = document.getElementById('forgotPasswordForm');
+        loginForm.style.display = 'block';
+        signUpForm.style.display = 'none';
+        forgotPasswordForm.style.display = 'none';
+    }
+
+    function toggleForms() {
+        var loginForm = document.getElementById('loginForm');
+        var signUpForm = document.getElementById('signUpForm');
+        var forgotPasswordForm = document.getElementById('forgotPasswordForm');
+        if (signUpForm.style.display === 'none' && forgotPasswordForm.style.display === 'none') {
+            signUpForm.style.display = 'block';
+            loginForm.style.display = 'none';
+        } else {
+            signUpForm.style.display = 'none';
+            forgotPasswordForm.style.display = 'none';
+            loginForm.style.display = 'block';
+        }
+    }
+
+    function toggleForgotPassword() {
+        var loginForm = document.getElementById('loginForm');
+        var forgotPasswordForm = document.getElementById('forgotPasswordForm');
+        loginForm.style.display = 'none';
+        forgotPasswordForm.style.display = 'block';
+    }
+</script>
+</body>
+</html>

@@ -52,14 +52,18 @@
     </div>
     
     <div class="cardContainer">
-        <div class="card medium">Traffic Alerts
-          
-
-        </div>
+      
+      <div class="card medium" id="traffic-alerts">
+        <h2 class="H2">Traffic Alerts</h2>
+        <ul id="traffic-alert-list">
+            <!-- Traffic alert items will be appended here -->
+        </ul>
+      </div>
+    
         <div class="card medium">Congestion Level</div>
         
         <div class="card medium" id="weather-alerts">
-          <h2>Weather Alerts</h2>
+          <h2 class="H2">Weather Alerts</h2>
           <ul id="alert-list">
               <!-- Alert items will be appended here -->
           </ul>
@@ -154,99 +158,63 @@
             </div>
 
             <div class="data-card" id="future1">
-              <span class="data-label">In 1 hour:</span> 
-              <span class="data-value">Temp 22°C</span>
-              <span class="data-value">Pressure</span>
-              <span class="data-value">Cloud Coverage</span>
-              <span class="data-value">Humidity</span>
+              <span class="data-label"><i class="fa-solid fa-clock"></i> In 1 hour:</span> 
+              <span class="data-value"><i class="fa-solid fa-thermometer-half"></i> Temp 22°C</span>
+              <span class="data-value"><i class="fa-solid fa-gauge-high"></i> Pressure</span>
+              <span class="data-value"><i class="fa-solid fa-cloud"></i> Cloud Coverage</span>
+              <span class="data-value"><i class="fa-solid fa-droplet"></i> Humidity</span>
             </div>
+            
 
             <div class="data-card" id="future2">
-              <span class="data-label">In 2 hours:</span> 
-              <span class="data-value">Temp 22°C</span>
-              <span class="data-value">Pressure</span>
-              <span class="data-value">Cloud Coverage</span>
-              <span class="data-value">Humidity</span>
+              <span class="data-label"><i class="fa-solid fa-clock"></i> In 2 hour:</span> 
+              <span class="data-value"><i class="fa-solid fa-thermometer-half"></i> Temp 22°C</span>
+              <span class="data-value"><i class="fa-solid fa-gauge-high"></i> Pressure</span>
+              <span class="data-value"><i class="fa-solid fa-cloud"></i> Cloud Coverage</span>
+              <span class="data-value"><i class="fa-solid fa-droplet"></i> Humidity</span>
             </div>
+            
 
             <div class="data-card" id="future3">
-              <span class="data-label">In 3 hours:</span> 
-              <span class="data-value">Temp 22°C</span>
-              <span class="data-value">Pressure</span>
-              <span class="data-value">Cloud Coverage</span>
-              <span class="data-value">Humidity</span>
+              <span class="data-label"><i class="fa-solid fa-clock"></i> In 3 hour:</span> 
+              <span class="data-value"><i class="fa-solid fa-thermometer-half"></i> Temp 22°C</span>
+              <span class="data-value"><i class="fa-solid fa-gauge-high"></i> Pressure</span>
+              <span class="data-value"><i class="fa-solid fa-cloud"></i> Cloud Coverage</span>
+              <span class="data-value"><i class="fa-solid fa-droplet"></i> Humidity</span>
             </div>
+            
 
             <div class="data-card" id="future4">
-              <span class="data-label">In 4 hours:</span> 
-              <span class="data-value">Temp 22°C</span>
-              <span class="data-value">Pressure</span>
-              <span class="data-value">Cloud Coverage</span>
-              <span class="data-value">Humidity</span>
+              <span class="data-label"><i class="fa-solid fa-clock"></i> In 4 hour:</span> 
+              <span class="data-value"><i class="fa-solid fa-thermometer-half"></i> Temp 22°C</span>
+              <span class="data-value"><i class="fa-solid fa-gauge-high"></i> Pressure</span>
+              <span class="data-value"><i class="fa-solid fa-cloud"></i> Cloud Coverage</span>
+              <span class="data-value"><i class="fa-solid fa-droplet"></i> Humidity</span>
             </div>
-
+            
+            
             <div class="data-card" id="future5">
-              <span class="data-label">In 5 hours:</span> 
-              <span class="data-value">Temp 22°C</span>
-              <span class="data-value">Pressure</span>
-              <span class="data-value">Cloud Coverage</span>
-              <span class="data-value">Humidity</span>
+              <span class="data-label"><i class="fa-solid fa-clock"></i> In 5 hour:</span> 
+              <span class="data-value"><i class="fa-solid fa-thermometer-half"></i> Temp 22°C</span>
+              <span class="data-value"><i class="fa-solid fa-gauge-high"></i> Pressure</span>
+              <span class="data-value"><i class="fa-solid fa-cloud"></i> Cloud Coverage</span>
+              <span class="data-value"><i class="fa-solid fa-droplet"></i> Humidity</span>
             </div>
+            
 
             <div class="data-card" id="future6">
-              <span class="data-label">In 6 hours:</span> 
-              <span class="data-value">Temp 22°C</span>
-              <span class="data-value">Pressure</span>
-              <span class="data-value">Cloud Coverage</span>
-              <span class="data-value">Humidity</span>
+              <span class="data-label"><i class="fa-solid fa-clock"></i> In 6 hour:</span> 
+              <span class="data-value"><i class="fa-solid fa-thermometer-half"></i> Temp 22°C</span>
+              <span class="data-value"><i class="fa-solid fa-gauge-high"></i> Pressure</span>
+              <span class="data-value"><i class="fa-solid fa-cloud"></i> Cloud Coverage</span>
+              <span class="data-value"><i class="fa-solid fa-droplet"></i> Humidity</span>
             </div>
+            
 
           </div>
         </div>
   
-      <script>
-        function calculateUVIndex(cloudCoverage) {
-          const hours = new Date().getHours(); // Get current hour
-          const maxUVIndex = 11; // Maximum UV index possible
-      
-          // Calculate base UV index based on time of day, peaking at noon
-          let uvIndex = maxUVIndex * Math.sin(((hours - 4) % 24) / 24 * Math.PI);
-      
-          // Adjust UV index based on cloud coverage
-          uvIndex *= (1 - (cloudCoverage / 100));
-      
-          return Math.max(0, uvIndex.toFixed(2)); // Ensure UV index doesn't go negative
-      }
-      
-      function generateRandomData() {
-          const temperature = (Math.random() * (26 - 24) + 24).toFixed(2) + ' °C';
-          const pressure = (Math.random() * (1000 - 990) + 990).toFixed(2) + ' mBar';
-          const humidity = (Math.random() * (62 - 55) + 55).toFixed(2) + ' %';
-          const cloudCov = (Math.random() * (35 - 31) + 31).toFixed(2) + ' %';
-          const O3 = (Math.random() * (20 - 18) + 18).toFixed(2) + ' ppB';
-          const NO2 = (Math.random() * (62 - 55) + 55).toFixed(2) + ' ppM';
-          const precipitationChance = (Math.random() * (25 - 10) + 10).toFixed(2) + ' %';
-          const windSpeed = (Math.random() * (8 - 5) + 5).toFixed(2) + ' km/h';
-          const uvIndex = calculateUVIndex(parseFloat(cloudCov)); // Calculate UV index based on cloud coverage
-      
-          // Update HTML elements with new data
-          document.getElementById('temperature').querySelector('.data-value').textContent = temperature;
-          document.getElementById('pressure').querySelector('.data-value').textContent = pressure;
-          document.getElementById('humidity').querySelector('.data-value').textContent = humidity;
-          document.getElementById('cloudCov').querySelector('.data-value').textContent = cloudCov;
-          document.getElementById('O3').querySelector('.data-value').textContent = O3;
-          document.getElementById('NO2').querySelector('.data-value').textContent = NO2;
-          document.getElementById('precipitation').querySelector('.data-value').textContent = precipitationChance;
-          document.getElementById('uvIndex').querySelector('.data-value').textContent = uvIndex;
-          document.getElementById('windSpeed').querySelector('.data-value').textContent = windSpeed;
-      }
-      
-      // Call generateRandomData to trigger the whole process immediately and on a 30-minute interval
-      generateRandomData();
-      setInterval(generateRandomData, 180000); // 1800000 milliseconds = 30 minutes
-  
-    </script>
-    
+
       
 
       <div class="MHolder">
@@ -278,7 +246,11 @@
     </div> 
   </div>
   </div>
+
   <script src="trafficMap.js"></script>
   <script src="WeatherAlert.js"></script>
+  <script src="WeatherData.js"></script>
+  <script src="TrafficAlert.js"></script>
+
   </body>
   </html>

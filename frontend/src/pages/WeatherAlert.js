@@ -1,5 +1,3 @@
-
-
 // Add event listener for DOMContentLoaded to ensure the HTML is fully loaded before manipulating it
 document.addEventListener('DOMContentLoaded', function () {
 // Function to simulate fetching weather alert data
