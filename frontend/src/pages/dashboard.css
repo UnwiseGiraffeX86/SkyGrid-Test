@@ -11,11 +11,7 @@ body, html {
   height: 100vh; /* Full height of the viewport */
 }
 
-.settingBar {
-  width: 250px; /* Fixed width for the setting bar */
-  background-color: #ff4d4d; /* Example color */
-  padding: 20px; /* Spacing inside the setting bar */
-}
+
 
 .cardContainer {
   flex-grow: 1; /* Takes up the remaining width */
@@ -30,7 +26,7 @@ body, html {
 .card {
   background-color: white;
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 10px;
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   display: flex;
@@ -76,3 +72,81 @@ body, html {
   width: calc(100% - 40px); /* 100% of the cell width minus the left and right padding */
   height: calc(50%-40px-10px  ); /* 50% of the cell height minus the top and bottom padding and half of the vertical gap */
 }
+.lights {
+  display: flex;
+  align-items: center;
+}
+
+
+
+.lights-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.lights-item {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 4px; /* Adjust as needed */
+}
+
+.lights-item.total-lights .number {
+  font-size: 2em; /* Large size for the total number */
+  font-weight: bold;
+  color: #5a5a5a; /* Adjust the color to match your design */
+}
+
+.lights-item:not(.total-lights) .number {
+  font-size: 1em; /* Smaller size for other numbers */
+  color: #5a5a5a; /* Adjust the color to match your design */
+}
+
+.lights-item .label {
+  margin-left: 10px;
+  font-size: 0.8em;
+  color: #a3a3a3; /* Adjust the color to match your design */
+}
+
+/* Additional icon styles if necessary */
+.lights-icon {
+  /* Example of using FontAwesome for the icon */
+  font-weight: 900;
+  font-size: 2em; /* Adjust the size as necessary */
+  color: #9170E4; /* Adjust the color to match your design */
+  margin-right: 15px; /* Space between the icon and the text */
+}
+
+
+/*=== Settings Bar ===*/
+.settingBar {
+  width: 150px; /* Fixed width for the setting bar */
+  background-color: #ff4d4d; /* Example color */
+  padding:20px;
+}
+
+.button{
+  margin-bottom: 20px;
+  width:100px;
+  height: 100px;
+  border-radius: 25%;
+  border-color: #00000000;
+}
+.button:hover{
+  margin-bottom: 20px;
+  width:100px;
+  height: 100px;
+  border-radius: 25%;
+  border-color: #00000000;
+  background-color: #969696;
+}
+
+.profile{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width:100px;
+  height: 100px;
+  border-radius: 100%;
+  border-color: #00000000;
+}
+/*=== Map ===*/
