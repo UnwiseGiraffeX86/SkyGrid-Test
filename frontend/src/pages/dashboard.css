@@ -124,33 +124,47 @@ body, html {
   background-color: #ff4d4d; /* Adjust color as needed */
   display: flex;
   flex-direction: column;
+  justify-content: space-around; /* Evenly distribute buttons with space around */
   align-items: center;
-  padding: 20px;
+  padding: 10px;
+  height: 100vh; /* Set height to 100% of the viewport */
+  position: fixed; /* Make it fixed to scroll with the page */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left or right as per your layout */
 }
 
 .button {
   background-color: #fff; /* Background color for buttons */
   border: none;
-  border-radius: 50%;
-  width: 100px; /* Width of buttons */
+  border-radius: 10%;
+  width: 120px; /* Width of buttons */
   height: 100px; /* Height of buttons */
-  margin-bottom: 20px;
-  cursor: pointer;
   display: flex;
+  flex-direction: column; /* Stack items vertically */
   justify-content: center;
   align-items: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Optional: adds shadow for depth */
+  padding: 10px; /* Padding inside the button */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Adds shadow for depth */
   color: #5a5a5a; /* Icon color */
   font-size: 24px; /* Icon size */
+  text-align: center; /* Center the text horizontally */
+}
+
+.button-label {
+  font-size: 12px; /* Font size for the label text */
+  color: #5a5a5a; /* Label text color */
+}
+
+.fa-solid {
+  margin-bottom: 5px; /* Space below the icon */
 }
 
 .button:hover {
   background-color: #969696; /* Hover background color */
 }
 
-/* Font Awesome icon adjustment */
-.fa-solid {
-  display: block;
-  scale: 200%;
-}
 /*=== Map ===*/
+
+body {
+  padding-left: 170px; /* Adjust this value based on the width of the settingBar */
+}
