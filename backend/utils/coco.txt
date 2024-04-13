@@ -1,0 +1,4 @@
+people
+car
+truck
+motorcycle

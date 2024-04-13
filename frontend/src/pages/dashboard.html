@@ -71,45 +71,88 @@
 
         <div class="card large">
           <div class="environmental-data">
-            <h2>Environmental Data</h2>
-            <div class="data-item">
-              <span class="data-label">CO:</span> <span class="data-value">350 ppm</span>
-            </div>
-            <div class="data-item">
-              <span class="data-label">CO2:</span> <span class="data-value">400 ppm</span>
-            </div>
-            <!-- Add other data items similarly -->
-            <div class="data-item">
-              <span class="data-label">NO2:</span> <span class="data-value">20 ppm</span>
-            </div>
+              <h2>Environmental Data</h2>
+              
+              <div class="data-card" id="temperature">
+                  <i class="fa-solid fa-thermometer-half data-icon"></i>
+                  <div class="data-content">
+                      <span class="data-label">Temperature:</span>
+                      <span class="data-value">Loading...</span>
+                  </div>
+              </div>
+      
+              <div class="data-card" id="pressure">
+                  <i class="fa-solid fa-gauge-high data-icon"></i>
+                  <div class="data-content">
+                      <span class="data-label">Pressure:</span>
+                      <span class="data-value">Loading...</span>
+                  </div>
+              </div>
+      
+              <div class="data-card" id="humidity">
+                  <i class="fa-solid fa-droplet data-icon"></i>
+                  <div class="data-content">
+                      <span class="data-label">Humidity:</span>
+                      <span class="data-value">Loading...</span>
+                  </div>
+              </div>
 
-            <div class="data-item">
-              <span class="data-label">UV Index:</span> <span class="data-value">6</span>
+              <div class="data-card" id="cloudCov">
+                <i class="fa-solid fa-cloud data-icon"></i>
+                <div class="data-content">
+                    <span class="data-label">Cloud Coverage:</span>
+                    <span class="data-value">Loading...</span>
+                </div>
             </div>
-
-            <div class="data-item">
-              <span class="data-label">Humidity:</span> <span class="data-value">55 %</span>
+            
+            <div class="data-card" id="O3">
+                <i class="fa-solid fa-smog data-icon"></i>
+                <div class="data-content">
+                    <span class="data-label">O₃ (Ozone):</span>
+                    <span class="data-value">Loading...</span>
+                </div>
             </div>
-
-            <div class="data-item">
-              <span class="data-label">Temperature:</span> <span class="data-value">20 °C</span>
+            
+            <div class="data-card" id="NO2">
+                <i class="fa-solid fa-wind data-icon"></i>
+                <div class="data-content">
+                    <span class="data-label">NO₂:</span>
+                    <span class="data-value">Loading...</span>
+                </div>
             </div>
-
-            <div class="data-item">
-              <span class="data-label">Noise Level:</span> <span class="data-value">87 dB</span>
-            </div>
-
-            <div class="data-item">
-              <span class="data-label">Cloud Coverage:</span> <span class="data-value">20 %</span>
-            </div>
-
-            <div class="data-item">
-              <span class="data-label">Precipitation chance:</span> <span class="data-value">9 %</span>
-            </div>
-
           </div>
         </div>
+  
+      <script>
+        function generateRandomData() {
+            
+            const temperature = (Math.random() * (26 - 24) + 24).toFixed(2) + ' °C';
+            
+            const pressure = (Math.random() * (1000 - 990) + 990).toFixed(2) + ' mBar';
+            
+            const humidity = (Math.random() * (62 - 55) + 55).toFixed(2) + ' %';
 
+            const cloudCov = (Math.random() * (35 - 31) + 31).toFixed(2) + ' %';
+            
+            const O3 = (Math.random() * (20 - 18) + 18).toFixed(2) + ' ppB';
+            
+            const NO2 = (Math.random() * (62 - 55) + 55).toFixed(2) + ' ppM';
+    
+            // Update HTML elements with new data
+            document.getElementById('temperature').querySelector('.data-value').textContent = temperature;
+            document.getElementById('pressure').querySelector('.data-value').textContent = pressure;
+            document.getElementById('humidity').querySelector('.data-value').textContent = humidity;
+            document.getElementById('cloudCov').querySelector('.data-value').textContent = cloudCov;
+            document.getElementById('O3').querySelector('.data-value').textContent = O3;
+            document.getElementById('NO2').querySelector('.data-value').textContent = NO2;
+        }
+    
+        // Refresh every 10 seconds
+        setInterval(generateRandomData, 180000);
+        generateRandomData(); // Initial load
+    </script>
+    
+      
 
       <div class="MHolder">
 
@@ -141,6 +184,5 @@
   </div>
   </div>
   <script src="trafficMap.js"></script>
-  <script src="EnvData.js"></script>
   </body>
   </html>
