@@ -37,9 +37,8 @@ fetch(apiUrl)
     .then(response => response.json())
     .then(data => {
     const environmentalData = {
-        co: data.current.co, // Assuming 'co' is part of the current object
         co2: "Not provided by API", // OpenWeather does not provide CO2
-        no2: data.current.no2, // Assuming 'no2' is part of the current object
+        no2: data.current.aqi, // Assuming 'no2' is part of the current object
         uvIndex: data.current.uvi,
         humidity: data.current.humidity,
         tempAvg: data.current.temp,
@@ -59,7 +58,11 @@ fetch(apiUrl)
 // Function to update the environmental data card with fetched data
 function updateEnvironmentalCard(data) {
 // Map the data from the API to the respective elements
-document.querySelector('.data-item .data-value.co').textContent = `${data.current.co} ppm`;
+    document.querySelector('.data-item .data-value.aqi').textContent = `${data.current.aqi} ppm`;
+    document.querySelector('.data-item .data-value.uvi').textContent = `${data.current.uvi} ppm`;
+    document.querySelector('.data-item .data-value.humidity').textContent = `${data.current.humidity} ppm`;
+    document.querySelector('.data-item .data-value.temp').textContent = `${data.current.temp} ppm`;
+
 // Repeat for other values like NO2, UV index etc.
 // Note: You may need to modify the paths depending on the actual structure of the API response
 }
