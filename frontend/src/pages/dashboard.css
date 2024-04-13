@@ -45,14 +45,7 @@ body, html {
   grid-row: span 1; /* Medium card will span 1 row */
 }
 
-.card.large {
-  grid-column: span 1;
-  grid-row: span 2; /* Large card will span 2 rows */
-  position: relative; /* Position relative for absolute positioning inside */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+
 
 .card.extralarge {
   grid-column: span 1; /* Now it will span only 1 column instead of 2 */
@@ -171,33 +164,63 @@ body, html {
 }
 
 /*=== Enviroment ===*/
-.environmental-data {
+
+
+.card.large {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align the child elements */
   padding: 10px;
+  gap: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 100%; /* Make sure it fills up the vertical space */
+}
+
+.environmental-data {
+  width: 100%; /* Make sure it takes up all the horizontal space */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-template-rows: repeat(5, 1fr); /* 5 rows */
+  gap: 10px; /* Spacing between cards */
+  align-items: start; /* Aligns content to start to avoid stretching */
+  overflow: auto; /* Ensures content is scrollable if it overflows */
 }
 
 .environmental-data h2 {
+  width: 100%; /* Full width */
+  text-align: center; /* Center the text */
   font-size: 1.5em;
   color: #436850; /* Adjust color as needed */
+  grid-column: 1 / -1; /* Spans all columns */
   margin-bottom: 10px;
 }
 
-
-
 .data-card {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px; /* Spacing between cards */
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
   padding: 10px;
-  background-color: #ffffff; /* Adjust as necessary */
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .data-icon {
-  font-size: 2rem; /* Adjust icon size as necessary */
-  color: #436850; /* Adjust icon color as necessary */
-  margin-right: 15px; /* Space between icon and text */
+  font-size: 1.5rem; /* Icon size */
+  color: #436850; /* Icon color */
+  margin-bottom: 5px; /* Space between icon and text */
 }
+
+.data-label, .data-value {
+  display: block; /* Ensure each label and value are on new lines */
+  color: #114232;
+  font-size: 1rem; /* Adjust text size for better readability */
+  font-weight: bold; /* Make labels bold */
+}
+
 
 .data-content {
   flex-grow: 1;
@@ -208,11 +231,7 @@ body, html {
   color: #436850; /* Adjust label color as necessary */
 }
 
-.data-value {
-  display: block; /* Makes the value appear on a new line */
-  color: #114232; /* Adjust value color as necessary */
-  font-size: 1.2rem; /* Adjust value size as necessary */
-}
+
 
 
 body {
