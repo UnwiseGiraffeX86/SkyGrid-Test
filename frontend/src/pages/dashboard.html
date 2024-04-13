@@ -57,7 +57,14 @@
 
         </div>
         <div class="card medium">Congestion Level</div>
-        <div class="card medium">Weather Alerts</div>
+        
+        <div class="card medium" id="weather-alerts">
+          <h2>Weather Alerts</h2>
+          <ul id="alert-list">
+              <!-- Alert items will be appended here -->
+          </ul>
+        </div>
+      
         <div class="card medium">Energy Consumption
         </div>
 
@@ -72,7 +79,7 @@
 
         <div class="card large">
           <div class="environmental-data">
-              <h2>Environmental Data</h2>
+              <h2 id="title">Environmental Data</h2>
               
               <div class="data-card" id="temperature">
                   <i class="fa-solid fa-thermometer-half data-icon"></i>
@@ -272,5 +279,6 @@
   </div>
   </div>
   <script src="trafficMap.js"></script>
+  <script src="WeatherAlert.js"></script>
   </body>
   </html>

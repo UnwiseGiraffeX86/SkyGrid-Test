@@ -168,29 +168,79 @@ body, html {
 .card.large {
   grid-column: span 1;
   grid-row: span 2;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns for the grid */
-  grid-template-rows: auto; /* Auto-size rows based on content */
-  gap: 15px; /* Space between grid items */
   padding: 15px; /* Padding inside the card */
-  align-items: start; /* Align items at the start of the cell */
-  height: calc(100% - 30px); /* Account for padding */
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   overflow: hidden; /* Hide the overflow */
+  height: calc(100% - 30px); /* Full height minus padding */
+  display: flex;
+  flex-direction: column; /* Stack the title and grid */
 }
 
 .environmental-data {
-  width: 100%;
-  height: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
-  grid-template-rows: repeat(5, 1fr); /* 5 rows */
-  gap: 10px; /* 15px spacing between cards */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto repeat(5, 1fr); /* Adjust the number of rows if necessary */
+  grid-gap: 15px;
+  grid-template-areas: 
+    ". title ."
+    "temp press hum"
+    "cloud ozone no2"
+    "prec uv wind"
+    "fut1 fut2 fut3"
+    "fut4 fut5 fut6";
 }
-
+#title {
+  grid-area: title;
+}
+#temperature {
+  grid-area: temp;
+}
+#pressure {
+  grid-area: press;
+}
+#humidity {
+  grid-area: hum;
+}
+#cloudCov{
+  grid-area: cloud;
+}
+#O3{
+  grid-area: ozone;
+}
+#NO2 {
+  grid-area: no2;
+}
+#precipitation{
+  grid-area: prec;
+}
+#uvIndex{
+  grid-area: uv;
+}
+#windSpeed{
+  grid-area: wind;
+}
+#future1{
+  grid-area: fut1;
+}
+#future2{
+  grid-area: fut2;
+}
+#future3{
+  grid-area: fut3;
+}
+#future4{
+  grid-area: fut4;
+}
+#future5{
+  grid-area: fut5;
+}
+#future6{
+  grid-area: fut6;
+}
 .environmental-data h2 {
-  grid-column: 1 / -1; /* Span all columns */
-  margin-bottom: 15px; /* 15px margin below the title */
+  text-align: center; /* Center the text */
+  margin-bottom: 15px; /* Margin below the title */
+  align-self: center; /* Center the title within the card */
 }
 
 .data-card {
@@ -204,32 +254,113 @@ body, html {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-
-
 .data-icon {
-  font-size: 1.5rem; /* Icon size */
-  color: #436850; /* Icon color */
-  margin-bottom: 5px; /* Space between icon and text */
+  font-size: 1.5rem;
+  color: #436850;
+  margin-bottom: 5px;
 }
 
 .data-label, .data-value {
-  display: block; /* Ensure each label and value are on new lines */
+  font-size: 1rem;
   color: #114232;
-  font-size: 1rem; /* Adjust text size for better readability */
-  font-weight: bold; /* Make labels bold */
+  font-weight: bold;
 }
-
 
 .data-content {
-  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-.data-label {
-  font-weight: bold;
-  color: #436850; /* Adjust label color as necessary */
+/* Ensuring there's no unnecessary scrolling inside .card.large */
+.card.large {
+  overflow: auto; /* Allow scroll only if needed */
 }
 
 
+
+/*=== Weather Alerts ===*/
+
+#weather-alerts ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Add styles for alert list items */
+.alert {
+  background-color: #f2dede; /* default alert background */
+  color: #000000; /* default alert text color */
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+/* Dynamic severity-based background colors */
+.alert-high {
+  background-color: #d9534f; /* red */
+}
+
+.alert-medium {
+  background-color: #f0ad4e; /* orange */
+}
+
+.alert-low {
+  background-color: #5bc0de; /* blue */
+}
+
+/* Weather alert card styles */
+#weather-alerts {
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Allow absolute positioning inside */
+  overflow-y: auto; /* Make only the list scrollable */
+  max-height: 300px; /* Set a fixed height to enable scrolling */
+  padding-top: 40px; /* This gives enough space at the top for the title */
+}
+
+/* Title styles */
+#weather-alerts h2 {
+  position: absolute; /* Absolute position */
+  top: 0; /* Stick to the top */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust the positioning to the exact center */
+  width: 100%; /* Full width */
+  text-align: center; /* Align the text to the center */
+  margin-top: 10px; /* Add top margin for spacing */
+  z-index: 10; /* Make sure it sits above other content */
+}
+
+
+#alert-list {
+  list-style: none; /* Remove default list style */
+  padding: 0;
+  margin: 0; /* Remove default margin */
+  overflow-y: auto; /* Enable vertical scrolling */
+  height: 100%; /* Full height to enable scrolling within the card */
+}
+
+#alert-list li {
+  background-color: #f2dede; /* Light red background for alert */
+  margin: 10px 0; /* Spacing between alerts */
+  padding: 10px;
+  border-radius: 5px;
+  border-left: 5px solid #d9534f; /* Left border color indicating the severity */
+} 
+
+#alert-list li.high-severity {
+  border-left-color: #d9534f; /* Red for high severity */
+  background-color: #f2dede; /* Light red background */
+}
+
+#alert-list li.medium-severity {
+  border-left-color: #f0ad4e; /* Orange for medium severity */
+  background-color: #fcf8e3; /* Light yellow background */
+}
+
+#alert-list li.low-severity {
+  border-left-color: #5bc0de; /* Blue for low severity */
+  background-color: #d9edf7; /* Light blue background */
+}
 
 
 body {
