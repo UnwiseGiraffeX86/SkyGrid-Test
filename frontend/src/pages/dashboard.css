@@ -165,48 +165,46 @@ body, html {
 
 /*=== Enviroment ===*/
 
-
 .card.large {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center align the child elements */
-  padding: 10px;
-  gap: 10px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  height: 100%; /* Make sure it fills up the vertical space */
+  grid-column: span 1;
+  grid-row: span 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns for the grid */
+  grid-template-rows: auto; /* Auto-size rows based on content */
+  gap: 15px; /* Space between grid items */
+  padding: 15px; /* Padding inside the card */
+  align-items: start; /* Align items at the start of the cell */
+  height: calc(100% - 30px); /* Account for padding */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  overflow: hidden; /* Hide the overflow */
 }
 
 .environmental-data {
-  width: 100%; /* Make sure it takes up all the horizontal space */
+  width: 100%;
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 columns */
   grid-template-rows: repeat(5, 1fr); /* 5 rows */
-  gap: 10px; /* Spacing between cards */
-  align-items: start; /* Aligns content to start to avoid stretching */
-  overflow: auto; /* Ensures content is scrollable if it overflows */
+  gap: 10px; /* 15px spacing between cards */
 }
 
 .environmental-data h2 {
-  width: 100%; /* Full width */
-  text-align: center; /* Center the text */
-  font-size: 1.5em;
-  color: #436850; /* Adjust color as needed */
-  grid-column: 1 / -1; /* Spans all columns */
-  margin-bottom: 10px;
+  grid-column: 1 / -1; /* Span all columns */
+  margin-bottom: 15px; /* 15px margin below the title */
 }
 
 .data-card {
-  background-color: #ffffff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 10px;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+
 
 .data-icon {
   font-size: 1.5rem; /* Icon size */
