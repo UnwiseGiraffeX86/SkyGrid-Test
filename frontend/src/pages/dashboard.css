@@ -1,170 +1,171 @@
-/* dashboard.css */
-body, html {
-  height: 100%;
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f1f1f1;
-}
+  /* dashboard.css */
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+  }
 
-.container {
-  display: flex;
-  height: 100vh; /* Full height of the viewport */
-}
-
-
-
-.cardContainer {
-  flex-grow: 1; /* Takes up the remaining width */
-  padding: 20px; /* Spacing inside the card container */
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Creates a 3 column layout */
-  grid-template-rows: auto; /* Row height will be determined by the content */
-  grid-gap: 20px; /* Space between cards */
-}
-
-/* Add basic styling for the cards. */
-.card {
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Creates a 3 column layout */
-  grid-template-rows: repeat(4, auto); /* Creates a 4 row layout to accommodate all cards */
-  grid-gap: 20px; /* Space between cards */
-}
+  .container {
+    display: flex;
+    height: 100vh; /* Full height of the viewport */
+  }
 
 
 
-.card.medium {
-  grid-row: span 1; /* Medium card will span 1 row */
-}
+  .cardContainer {
+    flex-grow: 1; /* Takes up the remaining width */
+    padding: 20px; /* Spacing inside the card container */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates a 3 column layout */
+    grid-template-rows: auto; /* Row height will be determined by the content */
+    grid-gap: 20px; /* Space between cards */
+  }
 
-.card.large {
-  grid-column: span 1;
-  grid-row: span 2; /* Large card will span 2 rows */
-}
-
-.card.extralarge {
-  grid-column: span 1; /* Extra large card will span 2 columns */
-  grid-row: span 2; /* Extra large card will also span 2 rows */
-}
-
-/* New style for MHolder to make it a grid container for the small cards */
-.MHolder {
-  display: grid;
-  grid-template-columns: auto; /* Single column layout */
-  grid-template-rows: 1fr 1fr; /* Two rows to accommodate both small cards */
-  background-color: #00000000;
-  align-content: start;
-  padding: 0;
-  grid-gap: 20px;
-  /* No padding on sides, top, or bottom for the small cards, but maintaining the 20px gap */
-}
-
-/* Ensure the small cards fill the .MHolder space */
-.card.small {
-  /* Small card will take up the full space available in the cell, minus the padding defined on the card itself */
-  width: calc(100% - 40px); /* 100% of the cell width minus the left and right padding */
-  height: calc(50%-40px-10px  ); /* 50% of the cell height minus the top and bottom padding and half of the vertical gap */
-}
-.lights {
-  display: flex;
-  align-items: center;
-}
+  /* Add basic styling for the cards. */
+  .card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates a 3 column layout */
+    grid-template-rows: repeat(4, auto); /* Creates a 4 row layout to accommodate all cards */
+    grid-gap: 20px; /* Space between cards */
+  }
 
 
 
-.lights-info {
-  display: flex;
-  flex-direction: column;
-  margin-left: 20px;
-}
+  .card.medium {
+    grid-row: span 1; /* Medium card will span 1 row */
+  }
 
-.lights-item {
-  display: flex;
-  align-items: baseline;
-  margin-bottom: 4px; /* Adjust as needed */
-}
+  .card.large {
+    grid-column: span 1;
+    grid-row: span 2; /* Large card will span 2 rows */
+  }
 
-.lights-item.total-lights .number {
-  font-size: 2em; /* Large size for the total number */
-  font-weight: bold;
-  color: #5a5a5a; /* Adjust the color to match your design */
-}
-
-.lights-item:not(.total-lights) .number {
-  font-size: 1em; /* Smaller size for other numbers */
-  color: #5a5a5a; /* Adjust the color to match your design */
-}
-
-.lights-item .label {
-  margin-left: 10px;
-  font-size: 0.8em;
-  color: #a3a3a3; /* Adjust the color to match your design */
-}
-
-/* Additional icon styles if necessary */
-.lights-icon {
-  /* Example of using FontAwesome for the icon */
-  font-weight: 900;
-  font-size: 2em; /* Adjust the size as necessary */
-  color: #9170E4; /* Adjust the color to match your design */
-  margin-right: 15px; /* Space between the icon and the text */
-}
+  .card.extralarge {
+    grid-column: span 1; /* Now it will span only 1 column instead of 2 */
+    grid-row: span 2; /* Assuming you want to keep the height the same */
+  }
 
 
-/*=== Settings Bar ===*/
-.settingBar {
-  width: 150px; /* Adjust width as needed */
-  background-color: #ff4d4d; /* Adjust color as needed */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around; /* Evenly distribute buttons with space around */
-  align-items: center;
-  padding: 10px;
-  height: 100vh; /* Set height to 100% of the viewport */
-  position: fixed; /* Make it fixed to scroll with the page */
-  top: 0; /* Align to the top */
-  left: 0; /* Align to the left or right as per your layout */
-}
+  /* New style for MHolder to make it a grid container for the small cards */
+  .MHolder {
+    display: grid;
+    grid-template-columns: auto; /* Single column layout */
+    grid-template-rows: 1fr 1fr; /* Two rows to accommodate both small cards */
+    background-color: #00000000;
+    align-content: start;
+    padding: 0;
+    grid-gap: 20px;
+    /* No padding on sides, top, or bottom for the small cards, but maintaining the 20px gap */
+  }
 
-.button {
-  background-color: #fff; /* Background color for buttons */
-  border: none;
-  border-radius: 10%;
-  width: 120px; /* Width of buttons */
-  height: 100px; /* Height of buttons */
-  display: flex;
-  flex-direction: column; /* Stack items vertically */
-  justify-content: center;
-  align-items: center;
-  padding: 10px; /* Padding inside the button */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Adds shadow for depth */
-  color: #5a5a5a; /* Icon color */
-  font-size: 24px; /* Icon size */
-  text-align: center; /* Center the text horizontally */
-}
+  /* Ensure the small cards fill the .MHolder space */
+  .card.small {
+    /* Small card will take up the full space available in the cell, minus the padding defined on the card itself */
+    width: calc(100% - 40px); /* 100% of the cell width minus the left and right padding */
+    height: calc(50%-40px-10px  ); /* 50% of the cell height minus the top and bottom padding and half of the vertical gap */
+  }
+  .lights {
+    display: flex;
+    align-items: center;
+  }
 
-.button-label {
-  font-size: 12px; /* Font size for the label text */
-  color: #5a5a5a; /* Label text color */
-}
 
-.fa-solid {
-  margin-bottom: 5px; /* Space below the icon */
-}
 
-.button:hover {
-  background-color: #969696; /* Hover background color */
-}
+  .lights-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+  }
 
-/*=== Map ===*/
+  .lights-item {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 4px; /* Adjust as needed */
+  }
 
-body {
-  padding-left: 170px; /* Adjust this value based on the width of the settingBar */
-}
+  .lights-item.total-lights .number {
+    font-size: 2em; /* Large size for the total number */
+    font-weight: bold;
+    color: #5a5a5a; /* Adjust the color to match your design */
+  }
+
+  .lights-item:not(.total-lights) .number {
+    font-size: 1em; /* Smaller size for other numbers */
+    color: #5a5a5a; /* Adjust the color to match your design */
+  }
+
+  .lights-item .label {
+    margin-left: 10px;
+    font-size: 0.8em;
+    color: #a3a3a3; /* Adjust the color to match your design */
+  }
+
+  /* Additional icon styles if necessary */
+  .lights-icon {
+    /* Example of using FontAwesome for the icon */
+    font-weight: 900;
+    font-size: 2em; /* Adjust the size as necessary */
+    color: #9170E4; /* Adjust the color to match your design */
+    margin-right: 15px; /* Space between the icon and the text */
+  }
+
+
+  /*=== Settings Bar ===*/
+  .settingBar {
+    width: 150px; /* Adjust width as needed */
+    background-color: #ff4d4d; /* Adjust color as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Evenly distribute buttons with space around */
+    align-items: center;
+    padding: 10px;
+    height: 100vh; /* Set height to 100% of the viewport */
+    position: fixed; /* Make it fixed to scroll with the page */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left or right as per your layout */
+  }
+
+  .button {
+    background-color: #fff; /* Background color for buttons */
+    border: none;
+    border-radius: 10%;
+    width: 120px; /* Width of buttons */
+    height: 100px; /* Height of buttons */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center;
+    align-items: center;
+    padding: 10px; /* Padding inside the button */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Adds shadow for depth */
+    color: #5a5a5a; /* Icon color */
+    font-size: 24px; /* Icon size */
+    text-align: center; /* Center the text horizontally */
+  }
+
+  .button-label {
+    font-size: 12px; /* Font size for the label text */
+    color: #5a5a5a; /* Label text color */
+  }
+
+  .fa-solid {
+    margin-bottom: 5px; /* Space below the icon */
+  }
+
+  .button:hover {
+    background-color: #969696; /* Hover background color */
+  }
+
+  /*=== Map ===*/
+
+  body {
+    padding-left: 170px; /* Adjust this value based on the width of the settingBar */
+  }
