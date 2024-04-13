@@ -1,35 +1,42 @@
 import requests
 import json
 
-def fetch_traffic_data(api_key, lat, lon, radius):
-    url = f"https://api.tomtom.com/traffic/services/5/incidentDetails"
-    params = {
+import requests
+
+def fetch_traffic_flow_data(api_key, bbox):
+    url = "https://api.tomtom.com/traffic/services/4/flowSegmentData/absolute/10/json"
+    parameters = {
         'key': api_key,
-        'bbox': f'{lat-radius},{lon-radius},{lat+radius},{lon+radius}',  # Define bounding box
-        'language': 'en-US',
-        'trafficModelID': '5',  # Example model ID
-        'format': 'json'
+        'bbox': bbox
     }
-    response = requests.get(url, params=params)
+    response = requests.get(url, params=parameters)
     if response.status_code == 200:
         return response.json()
     else:
-        print(f"Error fetching traffic data: {response.status_code}")
+        print(f"Failed to fetch data: {response.status_code}, {response.text}")
         return None
 
-def save_to_json(data, filename):
-    with open(filename, 'w') as file:
-        json.dump(data, file, indent=4)
+def calculate_congestion_index(traffic_data):
+    total_ratio = 0
+    count = 0
+    for segment in traffic_data.get("flowSegmentData", []):
+        free_flow_speed = segment.get("freeFlowSpeed")
+        current_speed = segment.get("currentSpeed")
+        if free_flow_speed and current_speed and free_flow_speed > 0:
+            ratio = current_speed / free_flow_speed
+            total_ratio += ratio
+            count += 1
+    if count > 0:
+        average_ratio = total_ratio / count
+        return (1 - average_ratio) * 100  # Congestion index in percentage
+    return 0
 
-# Replace 'YOUR_API_KEY' with your actual TomTom API key
 api_key = 'tcGE6aOGet0PG5FSOOpmTOhfRL52doTk'
-latitude = 40.7128  # New York City latitude
-longitude = -74.0060  # New York City longitude
-radius = 0.1  # Approx radius in degrees, adjust as necessary
+bbox = '25.9773,44.3771,26.2047,44.5014'  # Adjusted order to SW to NE
+traffic_data = fetch_traffic_flow_data(api_key, bbox)
 
-traffic_data = fetch_traffic_data(api_key, latitude, longitude, radius)
 if traffic_data:
-    save_to_json(traffic_data, 'tomtom_traffic_data.json')
-    print("Traffic data saved to 'tomtom_traffic_data.json'.")
+    index = calculate_congestion_index(traffic_data)
+    print(f"Traffic Congestion Index: {index:.2f}%")
 else:
-    print("Failed to fetch traffic data.")
+    print("No traffic data available.")

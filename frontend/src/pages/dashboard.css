@@ -20,6 +20,7 @@ body, html {
   grid-template-columns: repeat(3, 1fr); /* Creates a 3 column layout */
   grid-template-rows: auto; /* Row height will be determined by the content */
   grid-gap: 20px; /* Space between cards */
+  background-image: linear-gradient(to right bottom, #87a922, #5a9132, #367739, #1c5c39, #114232);
 }
 
 /* Add basic styling for the cards. */
@@ -122,7 +123,7 @@ body, html {
 /*=== Settings Bar ===*/
 .settingBar {
   width: 150px; /* Adjust width as needed */
-  background-color: #ADBC9F; /* Adjust color as needed */
+  background-image: linear-gradient(to left bottom, #87a922, #5a9132, #367739, #1c5c39, #114232);
   display: flex;
   flex-direction: column;
   justify-content: space-around; /* Evenly distribute buttons with space around */
@@ -135,7 +136,7 @@ body, html {
 }
 
 .button {
-  background-color: #FBFADA; /* Background color for buttons */
+  background-color: #f9f8cd; /* Background color for buttons */
   border: none;
   border-radius: 10%;
   width: 120px; /* Width of buttons */
@@ -146,9 +147,10 @@ body, html {
   align-items: center;
   padding: 10px; /* Padding inside the button */
   box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Adds shadow for depth */
-  color: #436850; /* Icon color */
+  color: #114232; /* Icon color */
   font-size: 24px; /* Icon size */
   text-align: center; /* Center the text horizontally */
+  transition: box-shadow 0.3s ease; /* Smooth transition for box-shadow */
 }
 
 .button-label {
@@ -161,7 +163,7 @@ body, html {
 }
 
 .button:hover {
-  background-color: #969696; /* Hover background color */
+  box-shadow:0px 0px 20px 10px #bdd926;
 }
 
 /*=== Map ===*/
