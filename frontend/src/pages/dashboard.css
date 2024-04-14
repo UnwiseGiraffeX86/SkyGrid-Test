@@ -70,49 +70,50 @@ body, html {
   /* Small card will take up the full space available in the cell, minus the padding defined on the card itself */
   width: calc(100% - 40px); /* 100% of the cell width minus the left and right padding */
   height: calc(50%-40px-10px  ); /* 50% of the cell height minus the top and bottom padding and half of the vertical gap */
+  display: flex;
+  justify-content: space-around;
 }
-.lights {
+
+.category {
   display: flex;
   align-items: center;
 }
 
-
-
-.lights-info {
+.category-info {
   display: flex;
   flex-direction: column;
   margin-left: 20px;
 }
 
-.lights-item {
+.category-item {
   display: flex;
   align-items: baseline;
   margin-bottom: 4px; /* Adjust as needed */
 }
 
-.lights-item.total-lights .number {
+.category-item.total-lights .number,
+.category-item.total-cameras .number {
   font-size: 2em; /* Large size for the total number */
   font-weight: bold;
   color: #5a5a5a; /* Adjust the color to match your design */
 }
 
-.lights-item:not(.total-lights) .number {
+.category-item:not(.total-lights):not(.total-cameras) .number {
   font-size: 1em; /* Smaller size for other numbers */
   color: #5a5a5a; /* Adjust the color to match your design */
 }
 
-.lights-item .label {
+.category-item .label {
   margin-left: 10px;
   font-size: 0.8em;
   color: #a3a3a3; /* Adjust the color to match your design */
 }
 
 /* Additional icon styles if necessary */
-.lights-icon {
-  /* Example of using FontAwesome for the icon */
+.category-icon {
   font-weight: 900;
   font-size: 2em; /* Adjust the size as necessary */
-  color: #9170E4; /* Adjust the color to match your design */
+  color: #436850; /* Adjust the color to match your design */
   margin-right: 15px; /* Space between the icon and the text */
 }
 
@@ -162,6 +163,42 @@ body, html {
 .button:hover {
   box-shadow:0px 0px 20px 10px #bdd926;
 }
+/*=== Light ===*/
+
+
+
+.category-item i {
+  margin-right: 8px; /* Space between the icon and the text */
+  color: #9170E4; /* Adjust the color to match your design */
+  width: 20px; /* Ensure the icons align nicely with the text */
+  text-align: center;
+}
+
+.category-item .number, .category-item .time {
+  margin-left: 8px; /* Ensure spacing after the icon */
+}
+
+/* You might want to style specific icons differently */
+.category-item .fa-lightbulb { /* Example for the lamp post icon */
+  color: #FFD700; /* Gold color for the lightbulb */
+}
+
+.category-item .fa-check { /* Example for the functioning icon */
+  color: #28a745; /* Green color for the check mark */
+}
+
+.category-item .fa-times { /* Example for the inactive icon */
+  color: #dc3545; /* Red color for the times */
+}
+
+.category-item .fa-sun { /* Example for the sunrise icon */
+  color: #f39c12; /* Orange color for the sun */
+}
+
+.category-item .fa-moon { /* Example for the sunset icon */
+  color: #343a40; /* Dark color for the moon */
+}
+
 
 /*=== Enviroment ===*/
 
@@ -371,6 +408,14 @@ body, html {
   border-left-color: #5bc0de; /* Blue for low severity */
   background-color: #d9edf7; /* Light blue background */
 }
+
+#energyConsumptionChart {
+  width: 800px;  /* or any other fixed width */
+  height: 400px; /* or any other fixed height */
+}
+
+/* === Congestion ===*/
+
 
 
 /*=== Weather Alerts ===*/

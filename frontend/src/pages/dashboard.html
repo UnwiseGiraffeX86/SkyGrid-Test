@@ -3,7 +3,7 @@
   <head>
       <script src="https://kit.fontawesome.com/5c5538a4fa.js" crossorigin="anonymous"></script>
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAFn9p-ADjyEytWFPmEW1zAll09zSSusg&callback=initMap&libraries=&v=weekly" async defer></script>
-
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="dashboard.css">
@@ -46,7 +46,7 @@
 
       <button class="button" type="button" title="Apps">
                   <i class="fa-solid fa-th"></i>
-        <span class="button-label">Apps</span>
+        <span class="button-label">Dashboard</span>
       </button>
 
     </div>
@@ -60,7 +60,12 @@
         </ul>
       </div>
     
-        <div class="card medium">Congestion Level</div>
+      <div class="card medium" id="congestion-level" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <!-- JavaScript will inject content here -->
+    </div>
+    
+      
+
         
         <div class="card medium" id="weather-alerts">
           <h2 class="H2">Weather Alerts</h2>
@@ -69,8 +74,11 @@
           </ul>
         </div>
       
-        <div class="card medium">Energy Consumption
-        </div>
+        <div class="card medium">
+          <canvas id="energyConsumptionChart" width="800" height="400"></canvas>
+
+      </div>
+      
 
 
         <!-- Harta  -->       
@@ -219,29 +227,80 @@
 
       <div class="MHolder">
 
-
         <div class="card small">
-          <div class="lights">
-            <div class="lights-icon"><i class="fa-sharp fa-solid fa-traffic-light"></i></div>
-            <div class="lights-info">
-              <div class="lights-item total-lights">
-                <span class="number">1128</span>
-                <span class="label">Total lights</span>
+          <div class="category lights">
+            <div class="category-info">
+              <div class="category-item total-lampposts">
+                <i class="fa-solid fa-lightbulb"></i> <!-- FontAwesome icon for lightbulb -->
+                <span class="number">14763</span>
+                <span class="label">Lamp posts</span>
               </div>
-              <div class="lights-item functioning-lights">
-                <span class="number">986</span>
+              <div class="category-item functioning-lampposts">
+                <i class="fa-solid fa-check"></i> <!-- FontAwesome icon for check -->
+                <span class="number">14479</span>
                 <span class="label">Functioning</span>
               </div>
-              <div class="lights-item not-functioning-lights">
-                <span class="number">142</span>
-                <span class="label">Not functioning</span>
+              <div class="category-item inactive-lampposts">
+                <i class="fa-solid fa-xmark"></i> <!-- FontAwesome icon for xmark -->
+                <span class="number">284</span>
+                <span class="label">Inactive</span>
+              </div>
+              <div class="category-item sunrise">
+                <i class="fa-solid fa-sun"></i> <!-- FontAwesome icon for sun -->
+                <span class="time">06:50</span>
+                <span class="label">Lights on</span>
+              </div>
+              <div class="category-item sunset">
+                <i class="fa-solid fa-moon"></i> <!-- FontAwesome icon for moon -->
+                <span class="time">19:25</span>
+                <span class="label">Lights off</span>
               </div>
             </div>
           </div>
         </div>
         
-        
-        <div class="card small"></div>
+
+      
+
+        <div class="card small">
+          <div class="category lights">
+              <div class="category-icon"><i class="fa-sharp fa-solid fa-traffic-light"></i></div>
+              <div class="category-info">
+                  <div class="category-item total-lights">
+                      <span class="number">1128</span>
+                      <span class="label">Total lights</span>
+                  </div>
+                  <div class="category-item functioning-lights">
+                      <span class="number">986</span>
+                      <span class="label">Functioning</span>
+                  </div>
+                  <div class="category-item not-functioning-lights">
+                      <span class="number">142</span>
+                      <span class="label">Not functioning</span>
+                  </div>
+              </div>
+          </div>
+          <div class="category cameras">
+              <div class="category-icon"><i class="fa-sharp fa-solid fa-video"></i></div>
+              <div class="category-info">
+                  <div class="category-item total-cameras">
+                      <span class="number">300</span>
+                      <span class="label">Total cameras</span>
+                  </div>
+                  <div class="category-item operational-cameras">
+                      <span class="number">270</span>
+                      <span class="label">Operational</span>
+                  </div>
+                  <div class="category-item inactive-cameras">
+                      <span class="number">30</span>
+                      <span class="label">Inactive</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+
+
       </div>
     </div> 
   </div>
@@ -251,6 +310,7 @@
   <script src="WeatherAlert.js"></script>
   <script src="WeatherData.js"></script>
   <script src="TrafficAlert.js"></script>
+  <script src="EnergyCons.js"></script>
 
   </body>
   </html>

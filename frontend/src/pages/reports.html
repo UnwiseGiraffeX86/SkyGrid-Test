@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/5c5538a4fa.js" crossorigin="anonymous"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAFn9p-ADjyEytWFPmEW1zAll09zSSusg&callback=initMap&libraries=&v=weekly" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="alerts.css">
+    <title>Dashboard Layout</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="settingBar">
+        
+            <button class="button" type="button" title="Profile">
+            <i class="fa-solid fa-user"></i>
+            <span class="button-label">Profile</span>
+            </button>
+
+            <button class="button" type="button" title="Map View">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <span class="button-label">Map View</span>
+            </button>
+
+            <button class="button" type="button" title="Alerts">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span class="button-label">Alerts</span>
+            </button>
+
+            <button class="button" type="button" title="Policies">
+            <i class="fa-solid fa-scroll"></i>
+            <span class="button-label">Policies</span>
+            </button>
+
+            <button class="button" type="button" title="Reports">
+            <i class="fa-solid fa-chart-line"></i>
+            <span class="button-label">Reports</span>
+            </button>
+
+            <button class="button" type="button" title="Settings">
+            <i class="fa-solid fa-gear"></i>
+            <span class="button-label">Settings</span>
+            </button>
+
+            <button class="button" type="button" title="Apps">
+                        <i class="fa-solid fa-th"></i>
+            <span class="button-label">Dashboard</span>
+            </button>
+
+        </div>
+
+        <div class="cardContainer">
+            
+            <div class="container">
+                <form id="fileUploadForm">
+                    <label for="file" class="custum-file-upload"> <!-- Corrected the class name -->
+                        <div class="icon">
+                            <!-- SVG icon goes here -->
+                        </div>
+                        <div class="text">
+                            <h2 style="color: #fff">Click to upload image</h2>
+                        </div>
+                        <input id="file" type="file">
+                    </label>
+                    <input class="input" type="text" id="description" name="description" placeholder="                                                  Type the description here">
+                    <button class="ui-btn" type="submit">Submit</button>
+                </form>
+            </div>
+            
+        </div>
+        
+        
+        
+    </div>
+
+
+
+<script src="trafficMap.js"></script>
+<script src="WeatherAlert.js"></script>
+<script src="WeatherData.js"></script>
+<script src="TrafficAlert.js"></script>
+<script src="EnergyCons.js"></script>
+
+</body>
+</html>
