@@ -1,0 +1,69 @@
+/* Styling for the parent container of the grid */
+.cardContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align the items vertically */
+    justify-content: center; /* Center align the items horizontally */
+    padding: 40px; /* Give some padding around the entire container */
+    width: 100%; /* Ensure the container takes the full width of its parent */
+}
+
+.uploads-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Creates 4 equal columns */
+    grid-template-rows: repeat(3, auto); /* Let each row size according to content */
+    gap: 40px; /* Spacing between cards */
+    width: 100%; /* Grid takes full width of its container */
+    max-width: 960px; /* Maximum width of the grid */
+    margin: 0 auto; /* Center the grid horizontally */
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px; /* Fixed width for each card */
+    height: 200px; /* Fixed height for each card */
+    background-color: #f3f3f3; /* Light gray background for visibility */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px; /* Padding inside each card */
+    text-align: center;
+}
+.user-card {
+    position: fixed; /* Keeps the card at the top right, regardless of scrolling */
+    top: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icon and text */
+    padding: 10px;
+    background-color: #fff; /* Adjust color based on your theme */
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Soft shadow for depth */
+    z-index: 1000; /* Ensures it stays on top of other content */
+}
+
+.user-icon {
+    font-size: 24px; /* Icon size */
+    color: #4a90e2; /* Icon color */
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.welcome-message {
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+}
+
+.balance {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
