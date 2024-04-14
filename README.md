@@ -1,25 +1,31 @@
-# SkyGrid
+# SkyGrid: The Web3 City Management System
 
 ## Project Overview
 
-SkyGrid is a cutting-edge platform designed to enhance urban planning and management by integrating real-time and predictive weather data. This AI-driven system optimizes city operations, minimizes weather-related disruptions, and enhances public safety and comfort. Leveraging blockchain technology, it ensures data integrity, transparency, and efficient resource management.
+The SkyGrid City Management System is an innovative platform designed to enhance urban management and community engagement through the integration of advanced technology and citizen participation. It utilizes real-time data, machine learning algorithms, and blockchain rewards to improve city operations, manage emergencies, and foster a collaborative relationship between city authorities and residents.
 
 ### Key Features
 
-- **Real-Time Weather Data Visualization**: Interactive dashboards displaying weather conditions.
-- **Predictive Weather Impact Analysis**: Forecasts of weather impacts on city operations.
-- **Adaptive Infrastructure Management**: Dynamic adjustment of city infrastructure based on weather predictions.
-- **Emergency and Disaster Management**: Coordinated response mechanisms for weather-related emergencies.
-- **Community Engagement Platform**: A portal for citizens to contribute data and participate in decision-making.
+-**Real-Time Weather Data Visualization:** Interactive dashboards that display current weather conditions across cities, enhanced by real-time user-contributed images documenting local weather phenomena.
 
-## Technologies Used
+-**Predictive Weather Impact Analysis:** Advanced forecasts of weather impacts on city operations, leveraging both meteorological data and user-submitted photos to refine predictions.
 
-- **Frontend**: HTML, CSS, JavaScript (with React.js for dynamic UI components)
-- **Backend**: Python (Flask or Django for the server-side application)
+-**Live Traffic Congestion Management:** Utilize machine learning algorithms to analyze real-time traffic data and dynamically manage congestion, improving flow and reducing delays across urban networks.
+
+-**Adaptive Infrastructure Management:** Dynamic adjustment of city infrastructure based on real-time and predictive weather data, with systems responsive to user-reported conditions.
+
+-**Emergency Alerts:** Generate immediate alerts through machine learning validation of user-submitted pictures depicting severe weather or traffic incidents. Contributors are rewarded with SkyGrid Tokens (SKD) proportionate to the incident's severity, enhancing timely and accurate reporting.
+
+-**Community Engagement Platform:** A portal for citizens to contribute data, including pictures of traffic or weather events, and participate in decision-making. Contributors are rewarded with SkyGrid Tokens and earn NFTs for each upload milestone (10, 25, 50, 100, 500, 1000, etc.). Both SkyGrid Tokens and NFTs are managed on the MultiverseX platform, enhancing engagement and value for community contributions.
+
+## Technologies Used and To Be Used
+
+- **Frontend**: HTML, CSS, JavaScript 
+- **Backend**: Genezio 
 - **Data Processing and AI**: Python (libraries such as TensorFlow, PyTorch for machine learning models)
-- **Blockchain**: Solidity for smart contracts, Ethereum for the blockchain network
+- **Blockchain**: MultiverseX
 - **Database**: MongoDB or PostgreSQL for data storage
-- **APIs**: RESTful API development for system integration and data access
+- **APIs**: RESTful API development for system integration and data access(TomTom, Google Cloud, OpenWeather Map)
 
 ## Getting Started
 
